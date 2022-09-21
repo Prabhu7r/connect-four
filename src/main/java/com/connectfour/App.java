@@ -105,9 +105,9 @@ public class App {
   }
 
 
-  public void chooseAndDrop(char symbol, int input) {
+  public void chooseAndDrop(char symbol, Scanner input) {
     do {
-      int col = input - 1;
+      int col = input.nextInt() - 1;
 
       // check if column is ok
       if (!(0 <= col && col < width)) {
@@ -148,7 +148,7 @@ public class App {
         char symbol = PLAYERS[player];
 
         System.out.println("\nPlayer " + symbol + " turn: ");
-        board.chooseAndDrop(symbol, userInput.nextInt());
+        board.chooseAndDrop(symbol, userInput);
         board.displayBoard();
 
         // check if a player won 
